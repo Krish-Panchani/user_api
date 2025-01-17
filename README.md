@@ -178,6 +178,29 @@ This project is a **Node.js** API for user authentication, built with **Express*
 
 ---
 
+### **6. Delete User (Admin Only)**
+- **URL:** `/api/users/:id`
+- **Method:** `DELETE`
+- **Description:** Deletes a user by their ID. This route is protected and accessible only by admin users.
+- **Headers:**
+  - `Authorization`: Bearer `<JWT_TOKEN>`
+- **Request Parameters:**
+  - `id`: User ID (as URL parameter).
+- **Responses:**
+  - **200 OK:**
+    ```json
+    {
+        "success": true,
+        "status": "User deleted successfully",
+        "data": null
+    }
+    ```
+  - **404 Not Found:** User not found.
+  - **401 Unauthorized:** No token provided or invalid token.
+  - **403 Forbidden:** User is not an admin.
+
+---
+
 ## **Project Structure**
 
 ```
@@ -219,4 +242,4 @@ project-folder
 ---
 
 ## **Author**
-Your Name | [Your GitHub Profile](https://github.com/your-profile)
+Krish Panchani | [GitHub Profile](https://github.com/Krish-Panchani)
